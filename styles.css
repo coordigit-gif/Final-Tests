@@ -1,0 +1,171 @@
+/* General Reset and Body Styling */
+body {
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ededed; 
+    text-align: center;
+    color: #333; 
+}
+
+/* Header Styling (Top dark bar) */
+.header {
+    background-color: #172a4d; /* Azul Marino Oscuro */
+    color: white;
+    padding: 25px 0;
+    margin-bottom: 50px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2.2em;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+/* Main Content Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Section Title (Reading and Listening) */
+.section-title {
+    font-size: 1.9em;
+    font-weight: 600;
+    margin-bottom: 40px;
+    color: #172a4d; 
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 120px; 
+    height: 4px; 
+    background-color: #3b74b7; /* Azul formal */
+    margin: 10px auto 0;
+}
+
+/* CSS Grid for the Level Boxes - Desktop (4 columns) */
+.levels-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px; 
+    padding-bottom: 50px;
+}
+
+/* Individual Level Box Styling */
+.level-box {
+    background-color: white;
+    border: 1px solid #ddd; 
+    border-radius: 4px; 
+    padding: 35px 20px;
+    box-shadow: none; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    transition: border-color 0.2s, background-color 0.2s;
+}
+
+.level-box:hover {
+    border-color: #3b74b7; 
+    background-color: #f7f9fc; 
+}
+
+.level-label {
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #172a4d; 
+    margin-bottom: 25px; 
+}
+
+/* The "Select" Button Style */
+.copy-link-btn {
+    display: inline-block;
+    background-color: #3b74b7; /* Azul formal */
+    color: white;
+    padding: 10px 25px; 
+    text-decoration: none; 
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: 1em;
+    transition: background-color 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.copy-link-btn:hover {
+    background-color: #2a5a92; 
+}
+
+/* ------------------------------------------
+   Diseño Adaptativo (Responsive Design)
+------------------------------------------ */
+
+/* 🖥️ Pantallas medianas (Tablets grandes / Laptops pequeñas, max 992px) */
+@media (max-width: 992px) {
+    /* Cambiamos de 4 columnas a 3 columnas */
+    .levels-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px; 
+    }
+}
+
+/* 📱 Tablets y Dispositivos Móviles en Horizontal (max 768px) */
+@media (max-width: 768px) {
+    /* Cambiamos de 3 columnas a 2 columnas */
+    .levels-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .header h1 {
+        font-size: 1.8em; 
+    }
+    .section-title {
+        font-size: 1.5em; 
+    }
+}
+
+/* 🤳 Teléfonos Móviles (Smartphones en Vertical, max 480px) */
+@media (max-width: 480px) {
+    /* Cambiamos de 2 columnas a 1 columna para máxima usabilidad */
+    .levels-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .level-box {
+        padding: 25px 15px; 
+    }
+}
+
+/* --- Estilos para el Botón de Regreso (para agregar a tus páginas de nivel) --- */
+.return-nav {
+    padding: 20px;
+    text-align: left;
+    background-color: #f7f9fc; 
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.return-btn {
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 600;
+    color: #3b74b7; 
+    padding: 8px 15px;
+    border: 1px solid #3b74b7;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.return-btn:hover {
+    background-color: #3b74b7;
+    color: white;
+}
